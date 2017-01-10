@@ -223,7 +223,7 @@ public class WeatherProvider extends ContentProvider {
                  * path segment. In the comment above, the last path segment is 1472214172 and
                  * represents the number of seconds since the epoch, or UTC time.
                  */
-                String normalizedUtcDateString = uri.getLastPathSegment();
+                String normalizedUtcDateString = String.valueOf(SunshineDateUtils.normalizeDate(Long.parseLong((uri.getLastPathSegment()))));
 
                 /*
                  * The query method accepts a string array of arguments, as there may be more
